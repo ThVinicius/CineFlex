@@ -36,12 +36,18 @@ header{
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   border-radius: 3px;
 }
+.films img{
+  width: 129px;
+  height: 193px;
+}
 .selectTime{
   width: 100vw;
   height: 79.03vh;
   flex-direction: column;
   padding: 0 24px;
   justify-content: inherit;
+  overflow-y: auto;
+  gap: 23px;
 }
 .selectTime h1{
   margin: 40px 0;
