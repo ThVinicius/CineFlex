@@ -3,6 +3,10 @@
 *{
   box-sizing: border-box;
 }
+a{
+  text-decoration: none;
+  color: inherit;
+}
 .alignCenter{
   display: flex;
   justify-content: center;
@@ -15,6 +19,9 @@ header{
   font: normal 400 30px 'Roboto', sans-serif;
   width: 100vw;
   height: 7.63vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .home{
   flex-direction: column;
@@ -41,16 +48,23 @@ header{
   height: 193px;
 }
 .selectTime{
-  width: 100vw;
-  height: 79.03vh;
   flex-direction: column;
-  padding: 0 24px;
-  justify-content: inherit;
+  /* height: 92.37vh; */
+  width: 100vw;
   overflow-y: auto;
+  margin-top: 7.63vh;
+}
+.adjustment{
+  flex-direction: column;
+  width: 100vw;
+  margin-bottom: 17.1vh;
+  padding: 0 24px;
   gap: 23px;
+  
 }
 .selectTime h1{
-  margin: 40px 0;
+  /* margin-top: 31.56vh; */
+  margin: 4.56vh 0;
 }
 .time{
   width: 100%;
@@ -78,6 +92,10 @@ footer{
   align-items: center;
   padding: 0 10px;
   gap: 14px;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 footer .film{
   width: 17.06vw;
@@ -93,26 +111,32 @@ footer h2{
 }
 .mainScreen{
   width: 100vw;
-  height: 79.03vh;
+  /* height: 79.03vh; */
+  margin-top: 7.63vh;
+  overflow-y: auto;
+  margin-bottom: 17.1vh;
 }
 .selectSeat{
   flex-direction: column;
-  padding: 0 24px;
+  padding: 0 6.4vw;
 }
 .selectSeat h2{
-  margin: 40px 0;
+  margin: 4.56vh 0;
   font: normal 400 24px 'Roboto', sans-serif;
   letter-spacing: 0.04em;
   color: #293845;
 }
 .seats{
   flex-wrap: wrap;
-  gap: 18px 7px;
+  gap: 2.05vh 1.86vw;
 }
 .seat{
   background-color: #C3CFD9;
   width: 26px;
   height: 26px;
+  font: normal 400 11px 'Roboto', sans-serif;
+  letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
   border: 1px solid #808F9D;
   border-radius: 12px;
 }
@@ -133,14 +157,14 @@ p{
 .subtitle{
   width: 100vw;
   justify-content: space-evenly;
-  margin-top:16px;
-  margin-bottom: 41px;
+  margin-top:1.82vh;
+  margin-bottom: 4.67vh;
 }
 .subtitle div{
   flex-direction: column;
 }
 .data{
-  padding: 0 24px;
+  padding: 0 6.4vw;
   display: flex;
   flex-direction: column;
   gap: 7px;
@@ -150,8 +174,8 @@ h3{
   color: #293845;
 }
 input{
-  width: 312px;
-  height: 51px;
+  width: 83.2vw;
+  height: 41px;
   background: #FFFFFF;
   border: 1px solid #D5D5D5;
   border-radius: 3px;
@@ -163,10 +187,33 @@ input::placeholder{
 }
 .buttonReserve{
   background-color: #E8833A;
-  width: 225px;
-  height: 42px;
-  margin-top: 57px;
+  width: 60vw;
+  height: 4.78vh;
+  margin-top: 4.49vh;
   font: normal 400 18px 'Roboto', sans-serif;
   letter-spacing: 0.04em;
   color: #ffffff;
+}
+.sucessScreen{
+  width: 100vw;
+  flex-direction: column;
+}
+.sucessScreen h1{
+  margin: 40px 0;
+  color: #247A6B;
+  font: normal 700 24px 'Roboto', sans-serif;
+  letter-spacing: 0.04em;
+}
+.dataBase > div{
+  margin-bottom: 20px;
+}
+h5{
+  font: normal 700 24px 'Roboto', sans-serif;
+  color: #293845;
+  letter-spacing: 0.04em;
+}
+h6{
+  font: normal 400 22px 'Roboto', sans-serif;
+  letter-spacing: 0.04em;
+  color: #293845;
 }
