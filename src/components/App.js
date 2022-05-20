@@ -4,8 +4,13 @@ import SelectTime from './SelectTime'
 import Header from './Header'
 import SelectSeat from './SelectSeat'
 import SucessScreen from './SuccessScreen'
+import { useState } from 'react'
 
 export default function App() {
+  // const [data] = useState()
+  // const data1 = []
+  // console.log('oi')
+
   return (
     <BrowserRouter>
       <Header />
