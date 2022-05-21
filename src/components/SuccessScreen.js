@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export default function SucessScreen({ data }) {
   const navigate = useNavigate()
@@ -25,8 +25,6 @@ export default function SucessScreen({ data }) {
           {data.movie.seats.map((item, index) => (
             <h6 key={index}>Assento {item}</h6>
           ))}
-          {/* <h6>Assento 15</h6>
-          <h6>Assento 16</h6> */}
         </div>
         <div>
           <h5>Comprador</h5>

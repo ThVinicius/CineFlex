@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import Footer from './footer/Footer'
-import Film from './footer/Film'
+import Footer from './Footer/Footer'
+import Film from './Footer/Film'
 
 function Time({ weekday, date, time1, time2, id1, id2 }) {
   return (
@@ -32,16 +32,10 @@ export default function SelectTime() {
       `https://mock-api.driven.com.br/api/v5/cineflex/movies/${idFilm}/showtimes`
     )
 
-    promisse
-      .then(response => {
-        setFilm(response.data)
-        console.log(film)
-      })
-      .catch(() => {
-        console.log('deu ruim')
-      })
+    promisse.then(response => {
+      setFilm(response.data)
+    })
   }, [])
-  console.log(film.days)
 
   return (
     <div className="selectTime alignCenter">

@@ -34,6 +34,7 @@ header{
   color: #293845;
   letter-spacing: 0.04em;
   margin: 40px 0;
+  margin-top: 62px
 }
 .films{
   flex-wrap: wrap;
@@ -52,25 +53,20 @@ header{
 }
 .selectTime{
   flex-direction: column;
-  /* height: 92.37vh; */
   width: 100vw;
   overflow-y: auto;
   margin-top: 7.63vh;
 }
 .adjustment{
-  flex-direction: column;
   width: 100vw;
+  flex-wrap: wrap;
   margin-bottom: 17.1vh;
   padding: 0 24px;
   gap: 23px;
-  
 }
 .selectTime h1{
   /* margin-top: 31.56vh; */
   margin: 4.56vh 0;
-}
-.time{
-  width: 100%;
 }
 .time h2{
   margin-bottom: 22px
@@ -90,7 +86,7 @@ header{
 }
 footer{
   background-color: #DFE6ED;
-  height: 13.34vh;
+  height: 18.34vh;
   display: flex;
   align-items: center;
   padding: 0 10px;
@@ -101,12 +97,12 @@ footer{
   left: 0;
 }
 footer .film{
-  width: 17.06vw;
-  height: 10.14vh;
+  width: 7.0600000000000005vw;
+  height: 15.14vh;
 }
 footer img{
-  width: 12.8vw;
-  height: 8.2vh;
+  width: 6vw;
+  height: 13vh
 }
 footer h2{
   font: normal 400 26px 'Roboto', sans-serif;
@@ -121,7 +117,7 @@ footer h2{
 }
 .selectSeat{
   flex-direction: column;
-  padding: 0 6.4vw;
+  padding: 0 2.4vw;
 }
 .selectSeat h2{
   margin: 4.56vh 0;
@@ -131,7 +127,7 @@ footer h2{
 }
 .seats{
   flex-wrap: wrap;
-  gap: 2.05vh 1.86vw;
+  gap: 2.05vh 0.9vw;
 }
 .seat{
   background-color: #C3CFD9;
@@ -170,6 +166,8 @@ p{
   padding: 0 6.4vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-bottom: 23.34vh;
   gap: 7px;
 }
 h3{
@@ -177,8 +175,8 @@ h3{
   color: #293845;
 }
 input{
-  width: 83.2vw;
-  height: 41px;
+  width: 59.2vw;
+  height: 30px;
   background: #FFFFFF;
   border: 1px solid #D5D5D5;
   border-radius: 3px;
@@ -190,8 +188,8 @@ input::placeholder{
 }
 .buttonReserve{
   background-color: #E8833A;
-  width: 60vw;
-  height: 4.78vh;
+  width: 35vw;
+  height: 7.78vh;
   margin-top: 4.49vh;
   font: normal 400 18px 'Roboto', sans-serif;
   letter-spacing: 0.04em;
@@ -219,4 +217,40 @@ h6{
   font: normal 400 22px 'Roboto', sans-serif;
   letter-spacing: 0.04em;
   color: #293845;
+}
+@media (max-width:420px){
+  .adjustment{
+    flex-direction: column;
+  }
+  .time{
+    width: 100%;
+  }
+  footer{
+    height: 13.34vh; 
+  }
+  footer .film{
+    width: 17.06vw;
+    height: 10.14vh;
+  }
+  footer img {
+    width: 10.7vw;
+    height: 9vh;
+}
+  .seats{
+    gap: 2.05vh 1.86vw;
+  }
+  .selectSeat{
+    padding: 0 6.4vw;
+  }
+  input{
+    width: 83.2vw;
+    height: 41px;
+  }
+  .buttonReserve{
+    width: 60vw;
+    height: 4.78vh;
+  }
+  .data{
+    align-items: inherit ;
+  }
 }

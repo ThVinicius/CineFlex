@@ -22,7 +22,6 @@ export default function HomeScreen() {
       setFilms(response.data)
     })
   }, [])
-  console.log(films)
 
   return (
     <div className="home alignCenter">
