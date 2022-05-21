@@ -28,9 +28,11 @@ export default function HomeScreen() {
     <div className="home alignCenter">
       <h1>Selecione o filme</h1>
       <div className="films alignCenter">
-        {films.map((item, index) => (
-          <Film url={item.posterURL} id={item.id} key={index} />
-        ))}
+        {films.length === 0
+          ? 'Carregando Filmes'
+          : films.map((item, index) => (
+              <Film url={item.posterURL} id={item.id} key={index} />
+            ))}
       </div>
     </div>
   )

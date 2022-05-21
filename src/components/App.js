@@ -7,9 +7,12 @@ import SucessScreen from './SuccessScreen'
 import { useState } from 'react'
 
 export default function App() {
-  // const [data] = useState()
+  const [data] = useState({
+    reserve: {},
+    movie: {}
+  })
   // const data1 = []
-  // console.log('oi')
+  console.log(data)
 
   return (
     <BrowserRouter>
@@ -17,8 +20,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/filme/:idFilm" element={<SelectTime />} />
-        <Route path="/sessao/:idSeat" element={<SelectSeat />} />
-        <Route path="/sucesso" element={<SucessScreen />} />
+        <Route path="/sessao/:idSeat" element={<SelectSeat data={data} />} />
+        <Route path="/sucesso" element={<SucessScreen data={data} />} />
       </Routes>
     </BrowserRouter>
   )
