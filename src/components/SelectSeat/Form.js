@@ -41,16 +41,16 @@ export default function Form({ data, storage, navigate }) {
     data.movie.seats.sort((a, b) => a - b)
     data.reserve.ids.sort((a, b) => a - b)
 
-    const promisse = axios.post(
-      'https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many',
-      sent
-    )
-    promisse.then(response => {
-      navigate('/sucesso')
-    })
-    promisse.catch(response => {
-      alert('dados incorretos')
-    })
+    // const promisse = axios.post(
+    //   'https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many',
+    //   sent
+    // )
+    // promisse.then(response => {
+    navigate('/sucesso')
+    // })
+    // promisse.catch(response => {
+    //   alert('dados incorretos')
+    // })
   }
 
   return (

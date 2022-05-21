@@ -113,7 +113,7 @@ footer h2{
   /* height: 79.03vh; */
   margin-top: 7.63vh;
   overflow-y: auto;
-  margin-bottom: 17.1vh;
+  /* margin-bottom: 17.1vh; */
 }
 .selectSeat{
   flex-direction: column;
@@ -131,13 +131,13 @@ footer h2{
 }
 .seat{
   background-color: #C3CFD9;
-  width: 26px;
-  height: 26px;
+  width: 35px;
+  height: 35px;
   font: normal 400 11px 'Roboto', sans-serif;
   letter-spacing: 0.04em;
   letter-spacing: 0.04em;
   border: 1px solid #808F9D;
-  border-radius: 12px;
+  border-radius: 17px;
 }
 p{
   font: normal 400 13px 'Roboto', sans-serif;
@@ -167,7 +167,7 @@ p{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 23.34vh;
+  margin-bottom: 18.34vh;
   gap: 7px;
 }
 h3{
@@ -200,7 +200,8 @@ input::placeholder{
   flex-direction: column;
 }
 .sucessScreen h1{
-  margin: 40px 0;
+  margin-top: 12vh;
+  margin-bottom: 3vh;
   color: #247A6B;
   font: normal 700 24px 'Roboto', sans-serif;
   letter-spacing: 0.04em;
@@ -251,6 +252,12 @@ h6{
     height: 4.78vh;
   }
   .data{
+    margin-bottom: 23.34vh;
     align-items: inherit ;
+  }
+  .seat{
+    width: 26px;
+    height: 26px;
+    border-radius: 12px;
   }
 }
