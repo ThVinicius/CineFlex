@@ -3,12 +3,18 @@
 *{
   box-sizing: border-box;
 }
+html, body{
+  overflow-x: hidden;
+}
 button{
   border: none;
 }
 a{
   text-decoration: none;
   color: inherit;
+}
+.cursor, .buttonReserve, .seatData h5{
+  cursor: pointer;
 }
 .alignCenter{
   display: flex;
@@ -167,7 +173,11 @@ p{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 18.34vh;
+  margin-bottom: 20.34vh;
+}
+form{
+  display: flex;
+  flex-direction: column;
   gap: 7px;
 }
 h3{
@@ -175,8 +185,9 @@ h3{
   color: #293845;
 }
 input{
-  width: 59.2vw;
+  width: 47.2vw;
   height: 30px;
+  font: normal 400 18px 'Roboto', sans-serif;
   background: #FFFFFF;
   border: 1px solid #D5D5D5;
   border-radius: 3px;
@@ -186,14 +197,32 @@ input::placeholder{
   color: #AFAFAF;
   padding: 0 18px;
 }
+.seatData{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  height: 32px;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.seatData.visible{
+  height: 153px;
+}
+.seatData h5 {
+  background-color: #8DD7CF;
+  font: normal 700 24px 'Roboto', sans-serif;
+  border-radius: 6px;
+  padding: 0 15px;
+}
 .buttonReserve{
   background-color: #E8833A;
-  width: 35vw;
-  height: 7.78vh;
+  width: 24vw;
+  height: 6.78vh;
   margin-top: 4.49vh;
   font: normal 400 18px 'Roboto', sans-serif;
   letter-spacing: 0.04em;
   color: #ffffff;
+  border-radius: 3px;
 }
 .sucessScreen{
   width: 100vw;
@@ -208,6 +237,10 @@ input::placeholder{
 }
 .dataBase > div{
   margin-bottom: 20px;
+}
+.dataBase h4{
+  font: normal 400 22px 'Roboto', sans-serif;
+  letter-spacing: 0.04em;
 }
 h5{
   font: normal 700 24px 'Roboto', sans-serif;
@@ -252,7 +285,7 @@ h6{
     height: 4.78vh;
   }
   .data{
-    margin-bottom: 23.34vh;
+    margin-bottom: 21.34vh;
     align-items: inherit ;
   }
   .seat{

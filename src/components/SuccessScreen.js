@@ -1,5 +1,15 @@
 import { useNavigate } from 'react-router-dom'
 
+function Ticket({ seat, name, CPF }) {
+  return (
+    <div>
+      <h6>Assento {seat}</h6>
+      <h4>Nome: {name}</h4>
+      <h4>CPF: {CPF}</h4>
+    </div>
+  )
+}
+
 export default function SucessScreen({ data }) {
   const navigate = useNavigate()
 
@@ -20,7 +30,15 @@ export default function SucessScreen({ data }) {
             {data.movie.date} {data.movie.hour}
           </h6>
         </div>
-        <div>
+        {data.data.map((item, index) => (
+          <Ticket
+            seat={item.assento}
+            name={item.nome}
+            CPF={item.cpf}
+            key={index}
+          />
+        ))}
+        {/* <div>
           <h5>Ingressos</h5>
           {data.movie.seats.map((item, index) => (
             <h6 key={index}>Assento {item}</h6>
@@ -30,7 +48,7 @@ export default function SucessScreen({ data }) {
           <h5>Comprador</h5>
           <h6>Nome: {data.reserve.name}</h6>
           <h6>CPF: {data.reserve.cpf}</h6>
-        </div>
+        </div> */}
       </div>
       <div className="buttonReserve alignCenter" onClick={backToHome}>
         Voltar pra Home

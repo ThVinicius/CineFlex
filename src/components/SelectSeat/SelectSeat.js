@@ -14,7 +14,12 @@ for (let i = 1; i <= 50; i++) {
 export default function SelectSeat({ data }) {
   const navigate = useNavigate()
   const [seat, setSeat] = useState([])
-  const [storage, setStorage] = useState({ ids: [], name: [] })
+  const [storage, setStorage] = useState({
+    ids: [],
+    compradores: [],
+    dados: []
+  })
+  const [inputValue] = useState([])
 
   const { idSeat } = useParams()
   useEffect(() => {
@@ -45,6 +50,7 @@ export default function SelectSeat({ data }) {
                   setStorage={setStorage}
                   id={seat.seats[index].id}
                   data={data}
+                  inputValue={inputValue}
                 />
               ))}
         </div>
@@ -64,7 +70,12 @@ export default function SelectSeat({ data }) {
         </div>
       </div>
       <div className="data">
-        <Form data={data} storage={storage} navigate={navigate} />
+        <Form
+          data={data}
+          storage={storage}
+          navigate={navigate}
+          inputValue={inputValue}
+        />
       </div>
       {seat.length === 0 ? (
         'Carregando'
