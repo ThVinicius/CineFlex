@@ -1,4 +1,7 @@
 import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import Loading from './shared/Loading'
 
 function Ticket({ seat, name, CPF }) {
   return (
@@ -11,7 +14,22 @@ function Ticket({ seat, name, CPF }) {
 }
 
 export default function SucessScreen({ data }) {
+  const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const promisse = axios.post(
+      'https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many',
+      data.body
+    )
+    promisse.then(() => {
+      setLoading(false)
+    })
+    promisse.catch(() => {
+      alert('dados incorretos')
+      navigate(-1)
+    })
+  }, [])
 
   const backToHome = () => {
     data.movie = {}
@@ -19,7 +37,9 @@ export default function SucessScreen({ data }) {
     navigate('/')
   }
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <div className="sucessScreen alignCenter">
       <div className="dataBase">
         <h1>Pedido feito com sucesso!</h1>
@@ -38,17 +58,6 @@ export default function SucessScreen({ data }) {
             key={index}
           />
         ))}
-        {/* <div>
-          <h5>Ingressos</h5>
-          {data.movie.seats.map((item, index) => (
-            <h6 key={index}>Assento {item}</h6>
-          ))}
-        </div>
-        <div>
-          <h5>Comprador</h5>
-          <h6>Nome: {data.reserve.name}</h6>
-          <h6>CPF: {data.reserve.cpf}</h6>
-        </div> */}
       </div>
       <div className="buttonReserve alignCenter" onClick={backToHome}>
         Voltar pra Home

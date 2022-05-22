@@ -32,6 +32,25 @@ header{
   top: 0;
   left: 0;
 }
+.loading{
+  height: 92.37vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.faixa{
+  position: relative;
+}
+.faixa img {
+  position: fixed;
+  top: 0;
+  left: 17px;
+  width: 4vw;
+  height: 7vh;
+  z-index: 1;
+  cursor: pointer;
+}
 .home{
   flex-direction: column;
 }
@@ -56,6 +75,7 @@ header{
 .films img{
   width: 129px;
   height: 193px;
+  cursor: pointer;
 }
 .selectTime{
   flex-direction: column;
@@ -253,6 +273,12 @@ h6{
   color: #293845;
 }
 @media (max-width:420px){
+  .faixa img {
+    top: 10px;
+    left: 17px;
+    width: 12vw;
+    height: 5vh;
+}
   .adjustment{
     flex-direction: column;
   }

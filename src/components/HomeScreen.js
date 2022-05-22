@@ -1,20 +1,26 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import Loading from './shared/Loading'
 
-function Film({ url, id }) {
+function Film({ url, id, setArrow, navigate }) {
+  const next = () => {
+    setArrow(true)
+    navigate(`/filme/${id}`)
+  }
+
   return (
     <div className="film alignCenter">
-      <Link to={`/filme/${id}`}>
-        <img src={url} alt="filme" />
-      </Link>
+      <img src={url} alt="filme" onClick={next} />
     </div>
   )
 }
 
-export default function HomeScreen() {
+export default function HomeScreen({ setArrow }) {
+  const navigate = useNavigate()
   const [films, setFilms] = useState([])
   useEffect(() => {
+    setArrow(false)
     const promisse = axios.get(
       'https://mock-api.driven.com.br/api/v5/cineflex/movies'
     )
@@ -22,17 +28,22 @@ export default function HomeScreen() {
       setFilms(response.data)
     })
   }, [])
-
-  return (
+  const content = (
     <div className="home alignCenter">
       <h1>Selecione o filme</h1>
       <div className="films alignCenter">
-        {films.length === 0
-          ? 'Carregando Filmes'
-          : films.map((item, index) => (
-              <Film url={item.posterURL} id={item.id} key={index} />
-            ))}
+        {films.map((item, index) => (
+          <Film
+            url={item.posterURL}
+            id={item.id}
+            key={index}
+            setArrow={setArrow}
+            navigate={navigate}
+          />
+        ))}
       </div>
     </div>
   )
+
+  return films.length === 0 ? <Loading /> : content
 }

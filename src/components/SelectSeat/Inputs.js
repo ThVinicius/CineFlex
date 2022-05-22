@@ -1,12 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default function Inputs({
-  index,
-  storage,
-  compradores,
-  inputValue,
-  seat
-}) {
+export default function Inputs({ index, storage, inputValue, seat }) {
   const [inputName, setInputName] = useState('')
   const [inputCPF, setInputCPF] = useState('')
   const [click, setClick] = useState(false)
@@ -26,12 +20,9 @@ export default function Inputs({
   }
 
   const hanleChangeInputCPF = e => {
-    // const { name, value } = e.target
     let input = e.target.value
     setInputCPF(input)
   }
-  // inputValue[index] = { nome: inputName, cpf: inputCPF }
-  // inputValue[index].assento = storage.dados[index].assento
 
   useEffect(() => {
     storage.compradores[index].nome = inputName
@@ -46,7 +37,6 @@ export default function Inputs({
 
   useEffect(() => {
     inputValue.filter((item, index, arr) => arr.indexOf(item) === index)
-    console.log(inputValue)
 
     inputValue.forEach(element => {
       if (element.assento === seat) {
@@ -55,8 +45,6 @@ export default function Inputs({
       }
     })
   }, [storage])
-  console.log(storage)
-  console.log(inputValue)
   return (
     <div className={click ? 'seatData visible' : 'seatData'}>
       <h5 onClick={() => setClick(!click)}>Assento {seat}</h5>

@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import axios from 'axios'
 import Inputs from './Inputs'
 
 export default function Form({ data, storage, navigate, inputValue }) {
@@ -15,29 +13,13 @@ export default function Form({ data, storage, navigate, inputValue }) {
       ids: storage.ids, // ids dos assentos
       compradores: storage.compradores
     }
+    data.body = body
 
-    // const sent = {
-    //   name: inputName,
-    //   cpf: inputCPF.cpf.replaceAll('.', '').replaceAll('-', ''),
-    //   ids: storage.ids
-    // }
-    // data.reserve.name = inputName
-    // data.reserve.cpf = inputCPF.cpf
-    // data.reserve.ids = storage.ids
     data.data = storage.dados
+    console.log(data)
     // data.movie.seats.sort((a, b) => a - b)
     // data.reserve.ids.sort((a, b) => a - b)
-
-    const promisse = axios.post(
-      'https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many',
-      body
-    )
-    promisse.then(response => {
-      navigate('/sucesso')
-    })
-    promisse.catch(response => {
-      alert('dados incorretos')
-    })
+    navigate('/sucesso')
   }
 
   return (

@@ -18,15 +18,7 @@ function confirm(storage, id, num, setStorage, selected, setColor) {
   }
 }
 
-export default function Seat({
-  num,
-  isAvailable,
-  storage,
-  setStorage,
-  id,
-  inputValue,
-  data
-}) {
+export default function Seat({ num, isAvailable, storage, setStorage, id }) {
   const [selected, setSelected] = useState({ state: false })
   const [color, setColor] = useState(undefined)
 
@@ -60,18 +52,8 @@ export default function Seat({
         ) {
           confirm(storage, id, num, setStorage, selected, setColor)
         }
-        // else {
-        //   setStorage({
-        //     ids: [...storage.ids.filter(item => item !== id)],
-        //     compradores: [
-        //       ...storage.compradores.filter(item => item.idAssento !== id)
-        //     ],
-        //     dados: [...storage.dados.filter(item => item.assento !== num)]
-        //   })
-        // }
       })
     }
-    // selected ? setColor('green') : setColor('')
   }, [selected])
 
   useEffect(() => {

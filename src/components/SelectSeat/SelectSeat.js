@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer'
 import Film from '../Footer/Film'
 import Form from './Form'
 import Seat from './Seat'
+import Loading from '../shared/Loading'
 
 let seats = []
 for (let i = 1; i <= 50; i++) {
@@ -34,25 +35,25 @@ export default function SelectSeat({ data }) {
     })
   }, [])
 
-  return (
+  return seat.length === 0 ? (
+    <Loading />
+  ) : (
     <div className="mainScreen">
       <div className="selectSeat alignCenter">
         <h2>Selecione o(s) assento(s)</h2>
         <div className="seats alignCenter">
-          {seat.length === 0
-            ? 'carregando'
-            : seats.map((item, index) => (
-                <Seat
-                  num={item}
-                  key={index}
-                  isAvailable={seat.seats[index].isAvailable}
-                  storage={storage}
-                  setStorage={setStorage}
-                  id={seat.seats[index].id}
-                  data={data}
-                  inputValue={inputValue}
-                />
-              ))}
+          {seats.map((item, index) => (
+            <Seat
+              num={item}
+              key={index}
+              isAvailable={seat.seats[index].isAvailable}
+              storage={storage}
+              setStorage={setStorage}
+              id={seat.seats[index].id}
+              data={data}
+              inputValue={inputValue}
+            />
+          ))}
         </div>
         <div className="subtitle alignCenter">
           <div className="alignCenter">
@@ -77,17 +78,13 @@ export default function SelectSeat({ data }) {
           inputValue={inputValue}
         />
       </div>
-      {seat.length === 0 ? (
-        'Carregando'
-      ) : (
-        <Footer>
-          <Film
-            src={seat.movie.posterURL}
-            name={seat.movie.title}
-            time={`${seat.day.weekday} - ${seat.name}`}
-          />
-        </Footer>
-      )}
+      <Footer>
+        <Film
+          src={seat.movie.posterURL}
+          name={seat.movie.title}
+          time={`${seat.day.weekday} - ${seat.name}`}
+        />
+      </Footer>
     </div>
   )
 }
