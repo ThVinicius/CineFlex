@@ -111,7 +111,7 @@ export default function Seat({ num, isAvailable, storage, setStorage, id }) {
       onClick={
         isAvailable
           ? () => setSelected({ ...selected, state: !selected.state })
-          : null
+          : () => alert('Esse assento não está disponível')
       }
     >
       {num}
