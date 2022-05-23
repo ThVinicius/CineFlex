@@ -1,10 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
+import ResetStyle from '../assets/css/reset'
+import GlobalStyle from '../assets/css/globalStyles'
 import HomeScreen from './HomeScreen'
 import SelectTime from './SelectTime'
 import Header from './Header'
 import SelectSeat from './SelectSeat/SelectSeat'
 import SucessScreen from './SuccessScreen'
-import { useState } from 'react'
 
 export default function App() {
   const [arrow, setArrow] = useState(true)
@@ -16,6 +18,8 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <ResetStyle />
+      <GlobalStyle />
       <Header arrow={arrow} setArrow={setArrow} />
       <Routes>
         <Route path="/" element={<HomeScreen setArrow={setArrow} />} />

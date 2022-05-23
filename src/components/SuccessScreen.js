@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import styled from 'styled-components'
 import Loading from './shared/Loading'
 
 function Ticket({ seat, name, CPF }) {
@@ -27,7 +28,7 @@ export default function SucessScreen({ data }) {
     })
     promisse.catch(() => {
       alert('dados incorretos')
-      navigate(-1)
+      navigate('/')
     })
   }, [])
 
@@ -40,8 +41,8 @@ export default function SucessScreen({ data }) {
   return loading ? (
     <Loading />
   ) : (
-    <div className="sucessScreen alignCenter">
-      <div className="dataBase">
+    <Container>
+      <ContainerData>
         <h1>Pedido feito com sucesso!</h1>
         <div>
           <h5>Filme e sessão</h5>
@@ -58,10 +59,63 @@ export default function SucessScreen({ data }) {
             key={index}
           />
         ))}
-      </div>
-      <div className="buttonReserve alignCenter" onClick={backToHome}>
-        Voltar pra Home
-      </div>
-    </div>
+      </ContainerData>
+      <Button onClick={backToHome}>Voltar pra Home</Button>
+    </Container>
   )
 }
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  flex-direction: column;
+
+  h1 {
+    margin-top: 12vh;
+    margin-bottom: 3vh;
+    color: #247a6b;
+    font: normal 700 24px 'Roboto', sans-serif;
+    letter-spacing: 0.04em;
+  }
+`
+const ContainerData = styled.div`
+  div {
+    margin-bottom: 20px;
+  }
+  h4 {
+    font: normal 400 22px 'Roboto', sans-serif;
+    letter-spacing: 0.04em;
+  }
+  h5 {
+    font: normal 700 24px 'Roboto', sans-serif;
+    color: #293845;
+    letter-spacing: 0.04em;
+  }
+  h6 {
+    font: normal 400 22px 'Roboto', sans-serif;
+    letter-spacing: 0.04em;
+    color: #293845;
+  }
+`
+const Button = styled.button`
+  background-color: #e8833a;
+  width: 24vw;
+  height: 6.78vh;
+  margin-top: 4.49vh;
+  font: normal 400 18px 'Roboto', sans-serif;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  @media (max-width: 420px) {
+    width: 60vw;
+    height: 42px;
+  }
+`
