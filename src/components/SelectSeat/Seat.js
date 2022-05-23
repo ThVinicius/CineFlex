@@ -69,7 +69,7 @@ export default function Seat({ num, isAvailable, storage, setStorage, id }) {
       className={
         isAvailable
           ? `seat alignCenter ${color} cursor`
-          : `seat alignCenter ${color}`
+          : `seat alignCenter ${color} no-drop`
       }
       onClick={
         isAvailable

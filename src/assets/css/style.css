@@ -16,6 +16,9 @@ a{
 .cursor, .buttonReserve, .seatData h5{
   cursor: pointer;
 }
+.no-drop{
+  cursor: not-allowed;
+}
 .alignCenter{
   display: flex;
   justify-content: center;
@@ -58,8 +61,8 @@ header{
   font: normal 400 24px 'Roboto', sans-serif;
   color: #293845;
   letter-spacing: 0.04em;
-  margin: 40px 0;
-  margin-top: 62px
+  margin-top: 10vh;
+  margin-bottom: 3vh;
 }
 .films{
   flex-wrap: wrap;
@@ -308,7 +311,7 @@ h6{
   }
   .buttonReserve{
     width: 60vw;
-    height: 4.78vh;
+    height: 42px;
   }
   .data{
     margin-bottom: 21.34vh;
