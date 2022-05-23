@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 function confirm(storage, id, num, setStorage, selected, setColor, color) {
   const teste = window.confirm(
-    'Os dados desse assento serão apagados.\nVocê confirma essa ação?'
+    `Os dados do assento ${num} serão apagados.\nVocê confirma essa ação?`
   )
   if (teste === true) {
     setStorage({
